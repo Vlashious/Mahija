@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 875068261
+    locked: 0
+  - name: Creatures
+    uniqueID: 16251749
+    locked: 0
