@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainCharacterAtlas
+  m_Name: MonstersAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -27,19 +27,21 @@ SpriteAtlas:
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 0
+      enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: c1f484da9f5ab224ba1bbaca844093fc, type: 3}
-    totalSpriteSurfaceArea: 1890000
+    - {fileID: 102900000, guid: ba6c2e232ef930d7396e042dc4030321, type: 3}
+    totalSpriteSurfaceArea: 3840000
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 9a33f5203eab761688f6e6abb131b48c, type: 3}
+  - {fileID: 21300000, guid: ea2eda11042ad1456a819a51c0a268b8, type: 3}
   - {fileID: 21300000, guid: af19f861e7e7c568ea120de41925122c, type: 3}
+  - {fileID: 21300000, guid: 65f2a3d1256df14bf8cd075d398d4e41, type: 3}
   - {fileID: 21300000, guid: 79f95a12264115a3d9673515ddd7ef44, type: 3}
   - {fileID: 21300000, guid: 395142a2cbb67452db0c2d9a283e2772, type: 3}
   - {fileID: 21300000, guid: 272e0fd2bf674f3309b881c026716ccb, type: 3}
@@ -48,20 +50,40 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2fb0aa941a4faebff9095c13fe312668, type: 3}
   - {fileID: 21300000, guid: f37ec9e44bcf31edab3917ad592fc685, type: 3}
   - {fileID: 21300000, guid: 24fb25453da4d090c8b6e88a22c2633c, type: 3}
+  - {fileID: 21300000, guid: 504d5ea5131777ba6ae53dc732d5a6f8, type: 3}
   - {fileID: 21300000, guid: 8dff51d5ccfd6e5e99cd35bc67508796, type: 3}
+  - {fileID: 21300000, guid: 0cbb09e5ae4af87aab41e19a8245ec97, type: 3}
+  - {fileID: 21300000, guid: 0b6fb7765deda7f7c827a92b9338c45a, type: 3}
+  - {fileID: 21300000, guid: 704c28b65a5ee4680b9cc31391e8a372, type: 3}
+  - {fileID: 21300000, guid: 5d9b3777812834b4d922433d378c4cb2, type: 3}
+  - {fileID: 21300000, guid: 339c0298084b18a14aa56f447a1710d3, type: 3}
+  - {fileID: 21300000, guid: 694972e86558a7720a9f4c47d8d36da5, type: 3}
   - {fileID: 21300000, guid: 0d4ca4099e8a17a05982300b3705ad28, type: 3}
+  - {fileID: 21300000, guid: e59ba119c67de4330a548d38e1179355, type: 3}
   - {fileID: 21300000, guid: ebcd16b91a86aa849b4ce4d139124b4b, type: 3}
   - {fileID: 21300000, guid: a4d6e8f96edcd633cb2e13e2e317a58b, type: 3}
   - {fileID: 21300000, guid: 174ded4a555a53d3e92e0738485c3bc1, type: 3}
   - {fileID: 21300000, guid: e6b0b48a79f318dc89ea7920141caeac, type: 3}
   - {fileID: 21300000, guid: d498862b6d0ddc6ddaceef9dc0921cba, type: 3}
+  - {fileID: 21300000, guid: 56e47e2bd09c5d5a9a28603572d4cb56, type: 3}
   - {fileID: 21300000, guid: 8e7c66ab236231b8a8d15ed49dc0a2d7, type: 3}
+  - {fileID: 21300000, guid: fc16391c7a8679692a095c4e99b5f49e, type: 3}
+  - {fileID: 21300000, guid: 3977624c0f473523c85f54c73ceea497, type: 3}
+  - {fileID: 21300000, guid: 6c50868dfd5ff8295a1de41cf99ac53f, type: 3}
   - {fileID: 21300000, guid: f8f2e46e42295dd908a12e6d887a3cd2, type: 3}
+  - {fileID: 21300000, guid: 56197e8ea19e44b1bae1a1840787bc3a, type: 3}
+  - {fileID: 21300000, guid: 393b0adeb829636eea752418457e0160, type: 3}
+  - {fileID: 21300000, guid: e20f4cee7b5843cb8be4c5f20c627fea, type: 3}
   - {fileID: 21300000, guid: 8b34061fc77f7d0bf9e4d66ed90faa9d, type: 3}
   - {fileID: 21300000, guid: 31ddff1f8a75fc3e69b07a68f5396cba, type: 3}
+  - {fileID: 21300000, guid: dd8dff4fb925260b79a067006d3a92b9, type: 3}
+  - {fileID: 21300000, guid: 0411045fa02a6fc4a9be3c114e57faba, type: 3}
+  - {fileID: 21300000, guid: 735fb5bf49de5bbeaaab77d02ad7920d, type: 3}
   m_PackedSpriteNamesToIndex:
   - 18
+  - 12
   - 08
+  - 05
   - 14
   - 06
   - 07
@@ -70,17 +92,35 @@ SpriteAtlas:
   - 15
   - 04
   - 17
+  - 08
   - 12
+  - 14
+  - 04
+  - 07
+  - 3
+  - 00
+  - 1
   - 20
+  - 11
   - 13
   - 16
   - 03
   - 09
   - 11
   - 01
+  - 01
+  - 4
+  - 0
+  - 06
   - 00
+  - 2
+  - 02
+  - 03
   - 05
   - 02
+  - 10
+  - 13
+  - 09
   m_RenderDataMap: {}
-  m_Tag: MainCharacterAtlas
+  m_Tag: MonstersAtlas
   m_IsVariant: 0
