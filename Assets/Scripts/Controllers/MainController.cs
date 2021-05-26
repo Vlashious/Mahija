@@ -29,7 +29,7 @@ namespace Controllers
         {
             BattleController = new BattleController();
             BattleController.Player = Instantiate(_playerPrefab);
-            Instantiate(_monsterPrefab, VectorExtensions.Randomize(1000, 1000), Quaternion.identity);
+            // Instantiate(_monsterPrefab, VectorExtensions.Randomize(1000, 1000), Quaternion.identity);
         }
 
         private void EndBattle()

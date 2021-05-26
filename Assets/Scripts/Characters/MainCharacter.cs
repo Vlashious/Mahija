@@ -8,7 +8,7 @@ namespace Characters
         protected override void Init()
         {
             base.Init();
-            MovementSpeed = 20;
+            MovementSpeed = 15;
         }
 
         protected override void Act()

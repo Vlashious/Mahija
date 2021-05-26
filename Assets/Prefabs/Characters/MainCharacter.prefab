@@ -82,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728662716965682712, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Size.x
-      value: 300
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 7728662716965682712, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Size.y
-      value: 300
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 7728662716965682712, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Sprite
@@ -98,15 +98,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Size.x
-      value: 416.1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Size.y
-      value: 266.2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Offset.y
-      value: 19.063385
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -118,19 +118,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 300
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 300
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 300
+      value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 300
+      value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 8297698231160596777, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
