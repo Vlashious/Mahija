@@ -1,29 +1,40 @@
 using UnityEngine;
 
-public class MainCharacter : BaseCharacter
+namespace Characters
 {
-    private Vector2 _lastMoveDir;
-    protected override void Act()
+    public class MainCharacter : BaseCharacter
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        var oldPos = transform.position;
-        var h = Input.GetAxisRaw("Horizontal");
-        var v = Input.GetAxisRaw("Vertical");
-        _animator.SetFloat("hMove", _lastMoveDir.x);
-        if (!Mathf.Approximately(h, 0) || !Mathf.Approximately(v, 0))
+        private Vector2 _lastMoveDir;
+        protected override void Init()
         {
-            _animator.SetBool("IsMoving", true);
-            _lastMoveDir = new Vector2(h, v);
-
-            transform.position = new Vector2(oldPos.x + h * MovementSpeed, oldPos.y + v * MovementSpeed);
+            base.Init();
+            MovementSpeed = 20;
         }
-        else
+
+        protected override void Act()
         {
-            _animator.SetBool("IsMoving", false);
+            Move();
+        }
+
+        private void Move()
+        {
+            var oldPos = transform.position;
+            var h = Input.GetAxisRaw("Horizontal");
+            var v = Input.GetAxisRaw("Vertical");
+            _animator.SetFloat("hMove", _lastMoveDir.x);
+
+            if (!Mathf.Approximately(h, 0) || !Mathf.Approximately(v, 0))
+            {
+                _animator.SetBool("IsMoving", true);
+                _lastMoveDir = new Vector2(h, v);
+                var moveDirNormalized = _lastMoveDir.normalized;
+
+                transform.position = new Vector2(oldPos.x + moveDirNormalized.x * MovementSpeed, oldPos.y + moveDirNormalized.y * MovementSpeed);
+            }
+            else
+            {
+                _animator.SetBool("IsMoving", false);
+            }
         }
     }
 }

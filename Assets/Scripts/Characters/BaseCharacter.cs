@@ -1,39 +1,49 @@
 using System;
+using Controllers;
 using UnityEngine;
 
-public abstract class BaseCharacter : MonoBehaviour
+namespace Characters
 {
-    [SerializeField]
-    protected Animator _animator;
-    public event Action HpChanged;
-    public event Action Died;
-    public int HP
+    public abstract class BaseCharacter : MonoBehaviour
     {
-        get => _hp;
-        set
+        [SerializeField]
+        protected Animator _animator;
+        public event Action HpChanged;
+        public event Action Died;
+        public int HP
         {
-            _hp = value;
-            HpChanged?.Invoke();
-
-            if (value <= 0)
+            get => _hp;
+            set
             {
-                Died?.Invoke();
+                _hp = value;
+                HpChanged?.Invoke();
+
+                if (value <= 0)
+                {
+                    Died?.Invoke();
+                }
             }
         }
-    }
-    protected float MovementSpeed;
-    private int _hp;
-    private void Start()
-    {
-        _hp = 100;
-        MovementSpeed = 10;
-        MainController.Instance.OnUpdate += Act;
-        Died += Die;
-    }
+        protected float MovementSpeed;
+        private int _hp;
+        private void Start()
+        {
+            MainController.Instance.OnUpdate += Act;
+            Died += Die;
+            Init();
+        }
 
-    protected abstract void Act();
-    protected virtual void Die()
-    {
-        Destroy(this);
+        protected virtual void Init()
+        {
+            _hp = 100;
+            MovementSpeed = 10;
+        }
+        protected virtual void Act()
+        {
+        }
+        protected virtual void Die()
+        {
+            Destroy(this);
+        }
     }
 }
