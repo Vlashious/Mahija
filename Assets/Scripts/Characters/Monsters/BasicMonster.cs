@@ -17,8 +17,8 @@ namespace Characters
             var playerPos = _player.transform.position;
             var moveVector = (playerPos - transform.position).normalized;
 
-            transform.position = new Vector2(oldPos.x + moveVector.x * MovementSpeed, oldPos.y + moveVector.y * MovementSpeed);
+            transform.position = new Vector2(oldPos.x + moveVector.x * MovementSpeed,
+                oldPos.y + moveVector.y * MovementSpeed);
         }
     }
-
 }

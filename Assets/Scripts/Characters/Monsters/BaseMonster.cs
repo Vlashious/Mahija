@@ -8,10 +8,11 @@ namespace Characters
     public abstract class BaseMonster : BaseCharacter
     {
         protected GameObject _player;
-        protected override void Init()
+
+        public override void Init()
         {
             base.Init();
-            _player = MainController.Instance.BattleController.Player;
+            _player = MainController.Instance.BattleController.Player.gameObject;
         }
     }
 }

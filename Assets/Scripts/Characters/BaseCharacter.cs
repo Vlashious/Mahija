@@ -6,10 +6,10 @@ namespace Characters
 {
     public abstract class BaseCharacter : MonoBehaviour
     {
-        [SerializeField]
-        protected Animator _animator;
+        [SerializeField] protected Animator _animator;
         public event Action HpChanged;
         public event Action Died;
+
         public int HP
         {
             get => _hp;
@@ -24,26 +24,24 @@ namespace Characters
                 }
             }
         }
+
         protected float MovementSpeed;
         private int _hp;
-        private void Start()
-        {
-            MainController.Instance.OnUpdate += Act;
-            Died += Die;
-            Init();
-        }
 
-        protected virtual void Init()
+        public virtual void Init()
         {
             _hp = 100;
-            MovementSpeed = 10;
+            MovementSpeed = 5;
+            MainController.Instance.OnUpdate += Act;
+            Died += Die;
         }
+
         protected virtual void Act()
         {
         }
+
         protected virtual void Die()
         {
-            Destroy(this);
         }
     }
 }

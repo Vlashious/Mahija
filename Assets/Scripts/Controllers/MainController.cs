@@ -1,19 +1,20 @@
 using System;
+using Characters;
 using UnityEngine;
 using Extensions;
+
 namespace Controllers
 {
     public class MainController : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject _playerPrefab;
+        [SerializeField] private MainCharacter _playerPrefab;
 
-        [SerializeField]
-        private GameObject _monsterPrefab;
+        [SerializeField] private BaseMonster _monsterPrefab;
 
         public static MainController Instance { get; set; }
         public BattleController BattleController { get; set; }
         public event Action OnUpdate;
+
         private void Start()
         {
             Instance = this;
@@ -29,7 +30,9 @@ namespace Controllers
         {
             BattleController = new BattleController();
             BattleController.Player = Instantiate(_playerPrefab);
-            // Instantiate(_monsterPrefab, VectorExtensions.Randomize(1000, 1000), Quaternion.identity);
+            BattleController.Player.Init();
+            var m = Instantiate(_monsterPrefab, VectorExtensions.Randomize(1000, 1000), Quaternion.identity);
+            m.Init();
         }
 
         private void EndBattle()
