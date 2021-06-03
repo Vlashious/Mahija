@@ -1,13 +1,15 @@
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
     public class MainCharacter : BaseCharacter
     {
         private Vector2 _lastMoveDir;
-        protected override void Init()
+
+        [Inject]
+        protected void Init()
         {
-            base.Init();
             MovementSpeed = 10;
         }
 
@@ -29,7 +31,8 @@ namespace Characters
                 _lastMoveDir = new Vector2(h, v);
                 var moveDirNormalized = _lastMoveDir.normalized;
 
-                transform.position = new Vector2(oldPos.x + moveDirNormalized.x * MovementSpeed, oldPos.y + moveDirNormalized.y * MovementSpeed);
+                transform.position = new Vector2(oldPos.x + moveDirNormalized.x * MovementSpeed,
+                    oldPos.y + moveDirNormalized.y * MovementSpeed);
             }
             else
             {

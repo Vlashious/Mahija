@@ -1,6 +1,7 @@
 using System;
 using Controllers;
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
@@ -31,15 +32,15 @@ namespace Characters
         private void Awake()
         {
             MainController.OnUpdate += Act;
+            MainController.OnUpdate += Move;
             Died += Die;
-            Init();
-        }
-
-        protected virtual void Init()
-        {
         }
 
         protected virtual void Act()
+        {
+        }
+
+        protected virtual void Move()
         {
         }
 

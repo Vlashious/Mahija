@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
     public class BasicMonster : BaseMonster
     {
+        [Inject]
+        protected void Init()
+        {
+            MovementSpeed = 5;
+        }
+
         protected override void Act()
         {
             Move();
