@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +8,7 @@ namespace Characters
         [Inject]
         protected void Init()
         {
-            MovementSpeed = 5;
+            MovementSpeed = 6;
         }
 
         protected override void Act()
@@ -21,7 +19,7 @@ namespace Characters
         {
             var oldPos = transform.position;
             var playerPos = _player.transform.position;
-            var moveVector = (playerPos - transform.position).normalized;
+            var moveVector = (playerPos - oldPos).normalized;
 
             transform.position = new Vector2(oldPos.x + moveVector.x * MovementSpeed,
                 oldPos.y + moveVector.y * MovementSpeed);

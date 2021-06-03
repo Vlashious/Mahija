@@ -10,7 +10,7 @@ namespace Characters
         [Inject]
         protected void Init()
         {
-            MovementSpeed = 10;
+            MovementSpeed = 8;
         }
 
         protected override void Act()
