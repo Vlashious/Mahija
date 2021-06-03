@@ -15,10 +15,9 @@ namespace Characters
 
         protected override void Act()
         {
-            Move();
         }
 
-        private void Move()
+        protected override void Move()
         {
             var oldPos = transform.position;
             var h = Input.GetAxisRaw("Horizontal");
