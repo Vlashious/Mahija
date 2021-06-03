@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using Controllers;
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
     public abstract class BaseMonster : BaseCharacter
     {
-        protected GameObject _player;
+        [Inject] protected GameObject _player;
 
-        public override void Init()
+        protected override void Init()
         {
             base.Init();
-            _player = MainController.Instance.BattleController.Player.gameObject;
         }
     }
 }

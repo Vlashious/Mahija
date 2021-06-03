@@ -5,7 +5,7 @@ namespace Characters
     public class MainCharacter : BaseCharacter
     {
         private Vector2 _lastMoveDir;
-        public override void Init()
+        protected override void Init()
         {
             base.Init();
             MovementSpeed = 10;

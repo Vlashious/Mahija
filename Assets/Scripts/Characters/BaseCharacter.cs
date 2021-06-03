@@ -28,12 +28,15 @@ namespace Characters
         protected float MovementSpeed;
         private int _hp;
 
-        public virtual void Init()
+        private void Awake()
         {
-            _hp = 100;
-            MovementSpeed = 5;
-            MainController.Instance.OnUpdate += Act;
+            MainController.OnUpdate += Act;
             Died += Die;
+            Init();
+        }
+
+        protected virtual void Init()
+        {
         }
 
         protected virtual void Act()
