@@ -1,0 +1,16 @@
+{
+    "name": "Magic",
+    "rootNamespace": "",
+    "references": [
+        "GUID:02b7874aa574c854794091614a18c28d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
