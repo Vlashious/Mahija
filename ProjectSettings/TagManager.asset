@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Monsters
+  - PlayerSpells
+  - MonsterSpells
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Creatures
     uniqueID: 16251749
+    locked: 0
+  - name: Spells
+    uniqueID: 1771214051
     locked: 0

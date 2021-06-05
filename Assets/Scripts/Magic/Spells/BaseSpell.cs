@@ -1,14 +1,20 @@
+using System.Collections.Generic;
 using Controllers;
+using Magic.Elements;
 using UnityEngine;
 
 namespace Magic.Spells
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
     public abstract class BaseSpell : MonoBehaviour
     {
+        protected List<IElement> Elements;
+        protected Rigidbody2D Rigidbody;
+
         private void Awake()
         {
-            MainController.OnUpdate += Act;
+            Rigidbody = GetComponent<Rigidbody2D>();
+            MainController.OnFixedUpdate += Act;
         }
 
         protected abstract void Act();
@@ -19,5 +25,10 @@ namespace Magic.Spells
         }
 
         protected abstract void OnCollision(Collision2D other);
+
+        private void OnDestroy()
+        {
+            MainController.OnFixedUpdate -= Act;
+        }
     }
 }

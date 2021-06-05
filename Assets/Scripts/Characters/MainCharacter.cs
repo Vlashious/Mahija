@@ -10,7 +10,7 @@ namespace Characters
         [Inject]
         protected void Init()
         {
-            MovementSpeed = 8;
+            MovementSpeed = 300;
         }
 
         protected override void Act()
@@ -30,8 +30,8 @@ namespace Characters
                 _lastMoveDir = new Vector2(h, v);
                 var moveDirNormalized = _lastMoveDir.normalized;
 
-                transform.position = new Vector2(oldPos.x + moveDirNormalized.x * MovementSpeed,
-                    oldPos.y + moveDirNormalized.y * MovementSpeed);
+                Rigidbody.MovePosition(oldPos + new Vector3(moveDirNormalized.x * MovementSpeed,
+                    +moveDirNormalized.y * MovementSpeed) * Time.fixedDeltaTime);
             }
             else
             {

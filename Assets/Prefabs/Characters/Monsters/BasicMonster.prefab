@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 5487055047916132959, guid: 02d266a657ec2f39489ca22289846564, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6309445256001919537, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Controller
       value: 

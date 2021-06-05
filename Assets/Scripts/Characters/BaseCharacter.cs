@@ -1,10 +1,10 @@
 using System;
 using Controllers;
 using UnityEngine;
-using Zenject;
 
 namespace Characters
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BaseCharacter : MonoBehaviour
     {
         [SerializeField] protected Animator _animator;
@@ -27,10 +27,12 @@ namespace Characters
         }
 
         protected float MovementSpeed;
+        protected Rigidbody2D Rigidbody;
         private int _hp;
 
         private void Awake()
         {
+            Rigidbody = GetComponent<Rigidbody2D>();
             MainController.OnUpdate += Act;
             MainController.OnUpdate += Move;
             Died += Die;

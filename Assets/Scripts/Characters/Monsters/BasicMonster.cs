@@ -8,7 +8,7 @@ namespace Characters
         [Inject]
         protected void Init()
         {
-            MovementSpeed = 6;
+            MovementSpeed = 200;
         }
 
         protected override void Act()
@@ -18,11 +18,15 @@ namespace Characters
         protected override void Move()
         {
             var oldPos = transform.position;
-            var playerPos = _player.transform.position;
+            var playerPos =_player.transform.position;
             var moveVector = (playerPos - oldPos).normalized;
 
-            transform.position = new Vector2(oldPos.x + moveVector.x * MovementSpeed,
-                oldPos.y + moveVector.y * MovementSpeed);
+            Rigidbody.MovePosition(oldPos + new Vector3(moveVector.x * MovementSpeed, moveVector.y * MovementSpeed) *
+                Time.fixedDeltaTime);
+        }
+
+        public class Factory : PlaceholderFactory<BasicMonster>
+        {
         }
     }
 }
