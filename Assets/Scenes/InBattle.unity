@@ -277,8 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ef81b5c99cd9a4ea748e7f487277c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldown: 0.5
-  _range: 100
+  _cooldown: 1
+  _range: 800
 --- !u!4 &688972989
 Transform:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 7330900118029945728, guid: 0ca5985f5c787acea8844306648999de, type: 3}
   _basicMonsterPrefab: {fileID: 7365444543019566642, guid: 6fcfcbf53d123ae4b8920c1b47cc3d80, type: 3}
-  _autoAttackPrefab: {fileID: 4648501290026945054, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
+  _autoAttackPrefab: {fileID: -6699423092700550124, guid: 82121cf26d9e4ec4ca09382e599ed89d, type: 3}
 --- !u!114 &1933526220
 MonoBehaviour:
   m_ObjectHideFlags: 0
