@@ -44,9 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 875068261
     locked: 0
-  - name: Creatures
-    uniqueID: 16251749
-    locked: 0
   - name: Spells
     uniqueID: 1771214051
+    locked: 0
+  - name: Creatures
+    uniqueID: 16251749
     locked: 0

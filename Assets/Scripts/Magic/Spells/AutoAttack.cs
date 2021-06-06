@@ -22,6 +22,8 @@ namespace Magic.Spells
             _dir = info.Target - info.Origin;
 
             // TODO: rotate missile, follow direction
+            var angle = Vector3.SignedAngle(transform.position, _dir, Vector3.forward);
+            transform.right = _dir;
         }
 
         protected override void Act()
