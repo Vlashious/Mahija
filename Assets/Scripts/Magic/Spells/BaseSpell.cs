@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Controllers;
 using Magic.Elements;
 using UnityEngine;
+using Zenject;
 
 namespace Magic.Spells
 {
@@ -10,6 +11,7 @@ namespace Magic.Spells
     {
         protected List<IElement> Elements;
         protected Rigidbody2D Rigidbody;
+        [Inject] protected SpellConfig Config;
 
         private void Awake()
         {

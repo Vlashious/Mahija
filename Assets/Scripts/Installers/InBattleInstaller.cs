@@ -1,4 +1,5 @@
 using Characters;
+using Magic;
 using Magic.Spells;
 using UnityEngine;
 using Zenject;
@@ -11,13 +12,15 @@ public class InBattleInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        Container.Bind<Camera>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<CharacterConfig>().FromScriptableObjectResource("CharacterConfig").AsSingle();
+        Container.Bind<SpellConfig>().FromScriptableObjectResource("SpellConfig").AsSingle();
         Container.Bind<MainCharacter>().FromComponentInNewPrefab(_playerPrefab).AsSingle().NonLazy();
-        Container.BindFactory<BasicMonster, BasicMonster.Factory>().FromComponentInNewPrefab(_basicMonsterPrefab)
+        Container.BindFactory<BasicMonster.BasicMonsterInfo, BasicMonster, BasicMonster.Factory>()
+            .FromComponentInNewPrefab(_basicMonsterPrefab)
             .AsTransient();
         Container.BindFactory<AutoAttack.AutoAttackInfo, AutoAttack, AutoAttack.Factory>()
             .FromComponentInNewPrefab(_autoAttackPrefab)
             .AsTransient();
-
-        Container.Resolve<BasicMonster.Factory>().Create();
     }
 }

@@ -5,10 +5,15 @@ namespace Characters
 {
     public class BasicMonster : BaseMonster
     {
-        [Inject]
-        protected void Init()
+        public struct BasicMonsterInfo
         {
-            MovementSpeed = 200;
+            public Vector3 StartPosition;
+        }
+
+        [Inject]
+        protected void Init(BasicMonsterInfo info)
+        {
+            transform.position = info.StartPosition;
         }
 
         protected override void Act()
@@ -18,14 +23,16 @@ namespace Characters
         protected override void Move()
         {
             var oldPos = transform.position;
-            var playerPos =_player.transform.position;
+            var playerPos = _player.transform.position;
             var moveVector = (playerPos - oldPos).normalized;
 
-            Rigidbody.MovePosition(oldPos + new Vector3(moveVector.x * MovementSpeed, moveVector.y * MovementSpeed) *
-                Time.fixedDeltaTime);
+            Rigidbody.MovePosition(oldPos +
+                                   new Vector3(moveVector.x * Config.BasicMonsterSpeed,
+                                       moveVector.y * Config.BasicMonsterSpeed) *
+                                   Time.fixedDeltaTime);
         }
 
-        public class Factory : PlaceholderFactory<BasicMonster>
+        public class Factory : PlaceholderFactory<BasicMonsterInfo, BasicMonster>
         {
         }
     }

@@ -1,22 +1,22 @@
 using System.Collections;
 using Characters;
+using Magic;
 using Magic.Spells;
 using UnityEngine;
 using Zenject;
 
 public class AutoAttackSpawner : MonoBehaviour
 {
-    [SerializeField] private float _cooldown;
-    [SerializeField] private float _range;
-
     private AutoAttack.Factory _autoAttackFactory;
     private MainCharacter _player;
+    private SpellConfig _conf;
 
     [Inject]
-    public void Init(AutoAttack.Factory factory, MainCharacter player)
+    public void Init(AutoAttack.Factory factory, MainCharacter player, SpellConfig config)
     {
         _autoAttackFactory = factory;
         _player = player;
+        _conf = config;
     }
 
     private void Start()
@@ -30,8 +30,9 @@ public class AutoAttackSpawner : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Monsters");
         while (true)
         {
-            yield return new WaitForSeconds(_cooldown);
-            var hitNum = Physics2D.OverlapCircleNonAlloc(_player.transform.position, _range, others, mask);
+            yield return new WaitForSeconds(_conf.AutoAttackCooldown);
+            var hitNum =
+                Physics2D.OverlapCircleNonAlloc(_player.transform.position, _conf.AutoAttackRange, others, mask);
             if (hitNum > 0)
             {
                 CreateSpell(others[0].gameObject);
@@ -45,8 +46,7 @@ public class AutoAttackSpawner : MonoBehaviour
             new AutoAttack.AutoAttackInfo
             {
                 Origin = _player.transform.position,
-                Target = target.transform.position,
-                Speed = Random.Range(5f, 10f)
+                Target = target.transform.position
             });
     }
 }

@@ -9,7 +9,6 @@ namespace Magic.Spells
         {
             public Vector3 Origin;
             public Vector3 Target;
-            public float Speed;
         }
 
         private AutoAttackInfo _info;
@@ -18,25 +17,23 @@ namespace Magic.Spells
         [Inject]
         public void Init(AutoAttackInfo info)
         {
-            Debug.Log(info.Origin);
-            Debug.Log(info.Target);
             transform.position = info.Origin;
-            _info.Speed = info.Speed;
 
             _dir = info.Target - info.Origin;
-            
+
             // TODO: rotate missile, follow direction
         }
 
         protected override void Act()
         {
-            Rigidbody.MovePosition(transform.position + _dir * (_info.Speed * Time.fixedDeltaTime));
+            Rigidbody.MovePosition(transform.position + _dir * (Config.AutoAttackSpeed * Time.fixedDeltaTime));
         }
 
         protected override void OnCollision(Collision2D other)
         {
             Debug.Log($"Collided with {other.gameObject.name}");
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
 
         public class Factory : PlaceholderFactory<AutoAttackInfo, AutoAttack>
