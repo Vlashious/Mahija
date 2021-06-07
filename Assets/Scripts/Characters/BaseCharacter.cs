@@ -35,8 +35,8 @@ namespace Characters
         {
             Animator = GetComponent<Animator>();
             Rigidbody = GetComponent<Rigidbody2D>();
-            MainController.OnUpdate += Act;
-            MainController.OnFixedUpdate += Move;
+            EventController.OnUpdate += Act;
+            EventController.OnFixedUpdate += Move;
             Died += Die;
         }
 
@@ -54,8 +54,8 @@ namespace Characters
 
         private void OnDestroy()
         {
-            MainController.OnUpdate -= Act;
-            MainController.OnFixedUpdate -= Move;
+            EventController.OnUpdate -= Act;
+            EventController.OnFixedUpdate -= Move;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Magic.Spells
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            MainController.OnFixedUpdate += Act;
+            EventController.OnFixedUpdate += Act;
         }
 
         protected abstract void Act();
@@ -30,7 +30,7 @@ namespace Magic.Spells
 
         private void OnDestroy()
         {
-            MainController.OnFixedUpdate -= Act;
+            EventController.OnFixedUpdate -= Act;
         }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CharacterConfig
   m_EditorClassIdentifier: Characters:ScriptableObjects:CharacterConfig
   MainCharacterSpeed: 550
-  BasicMonsterSpeed: 200
-  BasicMonsterRespawnTime: 1
+  BasicMonsterSpeed: 300
+  BasicMonsterRespawnTime: 2

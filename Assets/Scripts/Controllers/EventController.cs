@@ -3,10 +3,12 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class MainController : MonoBehaviour
+    public class EventController : MonoBehaviour
     {
         public static event Action OnUpdate;
         public static event Action OnFixedUpdate;
+        public static Action BattleEnter;
+        public static Action BattleEnd;
 
         private void Update()
         {

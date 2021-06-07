@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     {
         _player = player;
         _camera = camera;
-        MainController.OnUpdate += FollowPlayer;
+        EventController.OnUpdate += FollowPlayer;
     }
 
     private void FollowPlayer()

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpellConfig
   m_EditorClassIdentifier: 
   AutoAttackRange: 800
-  AutoAttackCooldown: 0.8
-  AutoAttackSpeed: 2
+  AutoAttackCooldown: 1
+  AutoAttackSpeed: 3
