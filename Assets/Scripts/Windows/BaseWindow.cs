@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Windows
 {
-    public abstract class BaseWindow : MonoBehaviour
+    public class BaseWindow : MonoBehaviour
     {
         public class BaseWindowData
         {

@@ -134,8 +134,10 @@ GameObject:
   - component: {fileID: 133936069}
   - component: {fileID: 133936068}
   - component: {fileID: 133936067}
+  - component: {fileID: 133936070}
+  - component: {fileID: 133936071}
   m_Layer: 0
-  m_Name: UIContext
+  m_Name: MainContext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,9 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windows:
   - WindowType: 0
-    WindowPrefab: {fileID: 8165015869936725533, guid: 73e65105ba7dcfd4d97c464d4c898755, type: 3}
+    WindowPrefab: {fileID: 6620237646895948459, guid: 96aba8b02b91f454bbee62e0f9f0e19a, type: 3}
   - WindowType: 1
-    WindowPrefab: {fileID: 9017171880431412265, guid: 3a0e5509bee99234c9c56dbe142ce79f, type: 3}
+    WindowPrefab: {fileID: 8688894572644663834, guid: fcdc007662939224ab28fe0cbaa96b5d, type: 3}
+  - WindowType: 2
+    WindowPrefab: {fileID: 2626859284192049186, guid: 49a860c6d39e8c740a16c28480e10c76, type: 3}
   _dontDestroy: {fileID: 1204943236}
   _windowRoot: {fileID: 1075295953}
 --- !u!114 &133936068
@@ -175,6 +179,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 133936067}
+  - {fileID: 133936070}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -206,6 +211,30 @@ Transform:
   m_Father: {fileID: 1204943237}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133936070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133936066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762eff729efa87e42b5c5972f0a61b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &133936071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133936066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f8ef7debee8564a9d5721209da6819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747972127
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +377,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
