@@ -5,8 +5,10 @@ namespace Controllers
 {
     public class EventController : MonoBehaviour
     {
-        public event Action OnUpdate;
-        public event Action OnFixedUpdate;
+        public static event Action OnUpdate;
+        public static event Action OnFixedUpdate;
+        public static Action BattleEnter;
+        public static Action BattleEnd;
 
         private void Update()
         {

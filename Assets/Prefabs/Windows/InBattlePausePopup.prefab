@@ -443,19 +443,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4507888737545309344}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2626859284192049186}
-        m_TargetAssemblyTypeName: Windows.InBattlePausePopup, Assembly-CSharp
-        m_MethodName: OnExitButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4162485505124040472
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,19 +698,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5973018760386011474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2626859284192049186}
-        m_TargetAssemblyTypeName: Windows.InBattlePausePopup, Assembly-CSharp
-        m_MethodName: OnResumeButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8633229698702378601
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df05d0b3fe96682c4b1e8451e9e6b891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 2631775901866923447}
 --- !u!1001 &8289531750836768646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,10 +27,6 @@ PrefabInstance:
     - target: {fileID: 5487055047916132959, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Layer
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487055047916132959, guid: 02d266a657ec2f39489ca22289846564, type: 3}
-      propertyPath: m_TagString
-      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 6309445256001919537, guid: 02d266a657ec2f39489ca22289846564, type: 3}
       propertyPath: m_Controller
@@ -149,5 +146,10 @@ PrefabInstance:
 --- !u!1 &4553062582549517785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5487055047916132959, guid: 02d266a657ec2f39489ca22289846564, type: 3}
+  m_PrefabInstance: {fileID: 8289531750836768646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2631775901866923447 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6309445256001919537, guid: 02d266a657ec2f39489ca22289846564, type: 3}
   m_PrefabInstance: {fileID: 8289531750836768646}
   m_PrefabAsset: {fileID: 0}

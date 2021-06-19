@@ -6,13 +6,10 @@ namespace Characters
     public class MainCharacter : BaseCharacter
     {
         private Vector2 _lastMoveDir;
-        private float _speed;
 
         [Inject]
-        protected void Init(CharacterConfig config)
+        protected void Init()
         {
-            _speed = config.MainCharacterSpeed;
-            _maxHp = config.MainCharacterMaxHp;
         }
 
         protected override void Act()
@@ -32,8 +29,8 @@ namespace Characters
                 _lastMoveDir = new Vector2(h, v);
                 var moveDirNormalized = _lastMoveDir.normalized;
 
-                Rigidbody.MovePosition(oldPos + new Vector3(moveDirNormalized.x * _speed,
-                moveDirNormalized.y * _speed) * Time.fixedDeltaTime);
+                Rigidbody.MovePosition(oldPos + new Vector3(moveDirNormalized.x * Config.MainCharacterSpeed,
+                    +moveDirNormalized.y * Config.MainCharacterSpeed) * Time.fixedDeltaTime);
             }
             else
             {

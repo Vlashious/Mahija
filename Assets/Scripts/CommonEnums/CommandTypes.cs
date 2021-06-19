@@ -3,9 +3,9 @@ namespace CommonEnums
     public enum CommandType
     {
         InitLoad,
-        EnterTheBattle,
-        ExitTheBattle,
-        PauseTheBattle,
-        DamageThePlayer
+        OpenWindow,
+        CloseWindow,
+        EnterBattle,
+        ExitBattle
     }
 }

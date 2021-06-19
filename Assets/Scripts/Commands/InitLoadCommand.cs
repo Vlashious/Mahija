@@ -2,7 +2,6 @@ using Windows;
 using CommonEnums;
 using UnityEngine;
 using Zenject;
-using UnityEngine.SceneManagement;
 
 namespace Commands
 {
