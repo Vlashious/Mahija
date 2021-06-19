@@ -1,5 +1,6 @@
 using Characters;
 using Controllers;
+using InputModules;
 using Magic;
 using Magic.Spells;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class InBattleInstaller : MonoInstaller
         Container.Bind<Camera>().FromComponentInHierarchy().AsSingle();
         Container.Bind<CharacterConfig>().FromScriptableObjectResource("CharacterConfig").AsSingle();
         Container.Bind<SpellConfig>().FromScriptableObjectResource("SpellConfig").AsSingle();
+        Container.Bind<IInputModule>().To<DesktopInput>().AsSingle();
         Container.Bind<MainCharacter>().FromComponentInNewPrefab(_playerPrefab).AsSingle().NonLazy();
         Container.BindFactory<BasicMonster.BasicMonsterInfo, BasicMonster, BasicMonster.Factory>()
             .FromComponentInNewPrefab(_basicMonsterPrefab)
