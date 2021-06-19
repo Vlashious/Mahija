@@ -4,7 +4,7 @@ namespace Windows
     {
         public void OnStartBattleClick()
         {
-            
+            _commandController.ExecuteCommand(CommonEnums.CommandType.EnterBattle);
         }
     }
 }

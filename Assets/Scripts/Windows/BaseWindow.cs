@@ -1,9 +1,12 @@
+using Controllers;
 using UnityEngine;
+using Zenject;
 
 namespace Windows
 {
     public class BaseWindow : MonoBehaviour
     {
+        [Inject] protected CommandController _commandController;
         public class BaseWindowData
         {
         }
