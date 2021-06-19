@@ -13,5 +13,11 @@ namespace Controllers
             var commandToExecute = _container.ResolveId<ICommand>(commandType);
             commandToExecute.Execute();
         }
+
+        public void UndoCommand(CommandType commandType)
+        {
+            var commandToExecute = _container.ResolveId<ICommand>(commandType);
+            commandToExecute.Undo();
+        }
     }
 }

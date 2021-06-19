@@ -11,5 +11,6 @@ public class CommandInstaller : MonoInstaller
         Container.Bind<ICommand>().WithId(CommandType.InitLoad).FromComponentInHierarchy().AsSingle();
         Container.Bind<ICommand>().WithId(CommandType.EnterBattle).To<EnterBattleCommand>().AsSingle();
         Container.Bind<ICommand>().WithId(CommandType.ExitBattle).To<ExitBattleCommand>().AsSingle();
+        Container.Bind<ICommand>().WithId(CommandType.PauseBattle).To<PauseBattleCommand>().AsSingle();
     }
 }
