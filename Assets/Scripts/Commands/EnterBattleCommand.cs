@@ -9,7 +9,7 @@ namespace Commands
         [Inject] WindowManager _windowManager;
         public void Execute()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("InBattle");
 
             _windowManager.OpenWindow(CommonEnums.WindowType.InBattleHud);
             _windowManager.CloseWindow(CommonEnums.WindowType.MainHud);

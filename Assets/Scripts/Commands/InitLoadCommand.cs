@@ -2,6 +2,7 @@ using Windows;
 using CommonEnums;
 using UnityEngine;
 using Zenject;
+using UnityEngine.SceneManagement;
 
 namespace Commands
 {
@@ -16,6 +17,7 @@ namespace Commands
 
         public void Execute()
         {
+            SceneManager.LoadScene("UI");
             _manager.OpenWindow(WindowType.MainHud);
         }
 

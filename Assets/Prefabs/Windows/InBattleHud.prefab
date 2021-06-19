@@ -347,8 +347,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8688894572644663834}
-        m_TargetAssemblyTypeName: Windows.InBattleHud, Windows
-        m_MethodName: OnExitBattleClick
+        m_TargetAssemblyTypeName: Windows.InBattleHud, Assembly-CSharp
+        m_MethodName: OnPauseButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,4 +1,5 @@
 using Characters;
+using Controllers;
 using Magic;
 using Magic.Spells;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class InBattleInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        Container.Bind<EventController>().FromNewComponentOnNewGameObject().AsSingle();
         Container.Bind<Camera>().FromComponentInHierarchy().AsSingle();
         Container.Bind<CharacterConfig>().FromScriptableObjectResource("CharacterConfig").AsSingle();
         Container.Bind<SpellConfig>().FromScriptableObjectResource("SpellConfig").AsSingle();

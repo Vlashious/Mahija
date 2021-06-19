@@ -29,14 +29,15 @@ namespace Characters
         protected Rigidbody2D Rigidbody;
         protected Animator Animator;
         [Inject] protected CharacterConfig Config;
+        [Inject] protected EventController _eventController;
         private int _hp;
 
         private void Awake()
         {
             Animator = GetComponent<Animator>();
             Rigidbody = GetComponent<Rigidbody2D>();
-            EventController.OnUpdate += Act;
-            EventController.OnFixedUpdate += Move;
+            _eventController.OnUpdate += Act;
+            _eventController.OnFixedUpdate += Move;
             Died += Die;
         }
 
@@ -54,8 +55,8 @@ namespace Characters
 
         private void OnDestroy()
         {
-            EventController.OnUpdate -= Act;
-            EventController.OnFixedUpdate -= Move;
+            _eventController.OnUpdate -= Act;
+            _eventController.OnFixedUpdate -= Move;
         }
     }
 }

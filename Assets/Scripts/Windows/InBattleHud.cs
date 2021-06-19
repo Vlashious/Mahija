@@ -1,10 +1,13 @@
+using Zenject;
+
 namespace Windows
 {
     public class InBattleHud : BaseWindow
     {
-        public void OnExitBattleClick()
+        [Inject] private WindowManager _windowManager;
+        public void OnPauseButtonClick()
         {
-            
+            _windowManager.OpenWindow(CommonEnums.WindowType.InBattlePausePopup);
         }
     }
 }

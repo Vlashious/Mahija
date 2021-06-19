@@ -12,11 +12,12 @@ namespace Magic.Spells
         protected List<IElement> Elements;
         protected Rigidbody2D Rigidbody;
         [Inject] protected SpellConfig Config;
+        [Inject] protected EventController _eventController;
 
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            EventController.OnFixedUpdate += Act;
+            _eventController.OnFixedUpdate += Act;
         }
 
         protected abstract void Act();
@@ -30,7 +31,7 @@ namespace Magic.Spells
 
         private void OnDestroy()
         {
-            EventController.OnFixedUpdate -= Act;
+            _eventController.OnFixedUpdate -= Act;
         }
     }
 }

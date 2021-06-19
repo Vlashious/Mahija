@@ -10,11 +10,11 @@ public class CameraController : MonoBehaviour
     private Camera _camera;
 
     [Inject]
-    public void Init(MainCharacter player, Camera camera)
+    public void Init(MainCharacter player, Camera camera, EventController eventController)
     {
         _player = player;
         _camera = camera;
-        EventController.OnUpdate += FollowPlayer;
+        eventController.OnUpdate += FollowPlayer;
     }
 
     private void FollowPlayer()
