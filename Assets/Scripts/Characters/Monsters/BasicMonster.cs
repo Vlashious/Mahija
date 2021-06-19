@@ -32,6 +32,14 @@ namespace Characters
                                    Time.fixedDeltaTime);
         }
 
+        protected override void OnCollision(Collision2D info)
+        {
+            if(info.gameObject.TryGetComponent<MainCharacter>(out var player))
+            {
+                player.HP -= Config.BasicMonsterDamage;
+            }
+        }
+
         public class Factory : PlaceholderFactory<BasicMonsterInfo, BasicMonster>
         {
         }
