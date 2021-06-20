@@ -400,6 +400,7 @@ MonoBehaviour:
     WindowPrefab: {fileID: 2626859284192049186, guid: 49a860c6d39e8c740a16c28480e10c76, type: 3}
   _dontDestroy: {fileID: 538994863}
   _windowRoot: {fileID: 353295456}
+  _joystickInputPrefab: {fileID: 1277937650857349211, guid: 029083a9f2333504f95ca4fea6a73a64, type: 3}
 --- !u!114 &765823524
 MonoBehaviour:
   m_ObjectHideFlags: 0
