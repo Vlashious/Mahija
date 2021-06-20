@@ -13,6 +13,9 @@ namespace Characters
         protected void Init(IInputModule input)
         {
             _input = input;
+            _maxHp = Config.MainCharacterMaxHp;
+            _hp = _maxHp;
+            _speed = Config.MainCharacterSpeed;
         }
 
         protected override void Act()
@@ -33,13 +36,18 @@ namespace Characters
                 _lastMoveDir = new Vector2(h, v);
                 var moveDirNormalized = _lastMoveDir.normalized;
 
-                Rigidbody.MovePosition(oldPos + new Vector3(moveDirNormalized.x * Config.MainCharacterSpeed,
-                    moveDirNormalized.y * Config.MainCharacterSpeed) * Time.fixedDeltaTime);
+                Rigidbody.MovePosition(oldPos + new Vector3(moveDirNormalized.x * _speed,
+                    moveDirNormalized.y * _speed) * Time.fixedDeltaTime);
             }
             else
             {
                 Animator.SetBool("IsMoving", false);
             }
+        }
+
+        protected override void Die()
+        {
+            _commandController.ExecuteCommand(CommonEnums.CommandType.ExitBattle);
         }
     }
 }

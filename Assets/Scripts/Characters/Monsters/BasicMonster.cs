@@ -10,10 +10,16 @@ namespace Characters
             public Vector3 StartPosition;
         }
 
+        private float _damage;
+
         [Inject]
         protected void Init(BasicMonsterInfo info)
         {
             transform.position = info.StartPosition;
+            _maxHp = Config.BasicMonsterMaxHp;
+            _hp = _maxHp;
+            _speed = Config.BasicMonsterSpeed;
+            _damage = Config.BasicMonsterBaseDamage;
         }
 
         protected override void Act()
@@ -27,9 +33,17 @@ namespace Characters
             var moveVector = (playerPos - oldPos).normalized;
 
             Rigidbody.MovePosition(oldPos +
-                                   new Vector3(moveVector.x * Config.BasicMonsterSpeed,
-                                       moveVector.y * Config.BasicMonsterSpeed) *
+                                   new Vector3(moveVector.x * _speed,
+                                       moveVector.y * _speed) *
                                    Time.fixedDeltaTime);
+        }
+
+        protected override void OnCollision(Collision2D other)
+        {
+            if(other.gameObject.TryGetComponent<MainCharacter>(out var player))
+            {
+                player.HP -= _damage;
+            }
         }
 
         public class Factory : PlaceholderFactory<BasicMonsterInfo, BasicMonster>

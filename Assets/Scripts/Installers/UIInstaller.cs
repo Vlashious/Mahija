@@ -9,13 +9,7 @@ namespace Installers
     public class UIInstaller : MonoInstaller
     {
         [SerializeField] private WindowDeclaration[] _windows;
-        [SerializeField] private GameObject _dontDestroy;
         [SerializeField] private Transform _windowRoot;
-
-        private void Awake()
-        {
-            DontDestroyOnLoad(_dontDestroy);
-        }
 
         public override void InstallBindings()
         {

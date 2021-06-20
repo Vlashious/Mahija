@@ -8,16 +8,16 @@ namespace Characters
     [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BaseCharacter : MonoBehaviour
     {
-        public event Action HpChanged;
+        public event Action<float, float> HpChanged;
         public event Action Died;
 
-        public int HP
+        public float HP
         {
             get => _hp;
             set
             {
                 _hp = value;
-                HpChanged?.Invoke();
+                HpChanged?.Invoke(_hp, _maxHp);
 
                 if (value <= 0)
                 {
@@ -26,11 +26,16 @@ namespace Characters
             }
         }
 
+        public float MaxHP { get => _maxHp; }
+
         protected Rigidbody2D Rigidbody;
         protected Animator Animator;
         [Inject] protected CharacterConfig Config;
         [Inject] protected EventController _eventController;
-        private int _hp;
+        [Inject] protected CommandController _commandController;
+        protected float _hp;
+        protected float _maxHp;
+        protected float _speed;
 
         private void Awake()
         {
@@ -50,6 +55,15 @@ namespace Characters
         }
 
         protected virtual void Die()
+        {
+        }
+
+        protected void OnCollisionEnter2D(Collision2D other)
+        {
+            OnCollision(other);
+        }
+
+        protected virtual void OnCollision(Collision2D other)
         {
         }
 

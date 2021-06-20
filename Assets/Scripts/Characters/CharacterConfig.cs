@@ -6,7 +6,10 @@ namespace Characters
     public class CharacterConfig : ScriptableObject
     {
         public float MainCharacterSpeed;
+        public float MainCharacterMaxHp;
         public float BasicMonsterSpeed;
+        public float BasicMonsterMaxHp;
+        public float BasicMonsterBaseDamage;
         public float BasicMonsterRespawnTime;
     }
 }
