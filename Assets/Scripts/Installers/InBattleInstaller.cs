@@ -26,6 +26,7 @@ public class InBattleInstaller : MonoInstaller
         Container.Bind<IInputModule>().To<JoystickInput>().FromComponentInNewPrefab(_joystickInputPrefab).UnderTransform(_inputContainer).AsSingle();
         Container.Bind<HealthBar>().FromComponentInNewPrefab(_healthBarPrefab).UnderTransform(_canvas).AsSingle().NonLazy();
         Container.Bind<MainCharacter>().FromComponentInNewPrefab(_playerPrefab).AsSingle().NonLazy();
+        Container.Bind<ScoreCounter>().FromComponentInHierarchy().AsSingle();
         Container.BindFactory<BasicMonster.BasicMonsterInfo, BasicMonster, BasicMonster.Factory>()
             .FromComponentInNewPrefab(_basicMonsterPrefab)
             .AsTransient();

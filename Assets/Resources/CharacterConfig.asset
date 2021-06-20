@@ -15,6 +15,6 @@ MonoBehaviour:
   MainCharacterSpeed: 550
   MainCharacterMaxHp: 100
   BasicMonsterSpeed: 300
-  BasicMonsterMaxHp: 10
+  BasicMonsterMaxHp: 2
   BasicMonsterBaseDamage: 10
-  BasicMonsterRespawnTime: 1
+  BasicMonsterRespawnTime: 3

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Controllers
@@ -18,6 +19,17 @@ namespace Controllers
         private void FixedUpdate()
         {
             OnFixedUpdate?.Invoke();
+        }
+
+        public void WaitAndExecute(float delay, Action callback)
+        {
+            StartCoroutine(WaitAndExecuteInternal(delay, callback));
+        }
+
+        private IEnumerator WaitAndExecuteInternal(float delay, Action callback)
+        {
+            yield return new WaitForSeconds(delay);
+            callback?.Invoke();
         }
     }
 }

@@ -5,6 +5,7 @@ namespace CommonEnums
         InitLoad,
         EnterBattle,
         ExitBattle,
-        PauseBattle
+        PauseBattle,
+        AddScore
     }
 }

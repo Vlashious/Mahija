@@ -40,10 +40,16 @@ namespace Characters
 
         protected override void OnCollision(Collision2D other)
         {
-            if(other.gameObject.TryGetComponent<MainCharacter>(out var player))
+            if (other.gameObject.TryGetComponent<MainCharacter>(out var player))
             {
                 player.HP -= _damage;
             }
+        }
+
+        protected override void Die()
+        {
+            _commandController.ExecuteCommandWithParameter(CommonEnums.CommandType.AddScore, new Commands.AddScoreCommand.AddScoreParameter { ScoreToAdd = 5 });
+            Destroy(gameObject);
         }
 
         public class Factory : PlaceholderFactory<BasicMonsterInfo, BasicMonster>

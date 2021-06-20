@@ -28,12 +28,20 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -3572157048307307871, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3572157048307307871, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 176
       objectReference: {fileID: 0}
     - target: {fileID: -3572157048307307871, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005744926144094159, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1409935070002438111, guid: 3e0ba8e0de361464387ced04bdb2d706, type: 3}
       propertyPath: m_RootOrder

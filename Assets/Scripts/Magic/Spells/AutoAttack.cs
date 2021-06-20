@@ -1,3 +1,4 @@
+using Characters;
 using UnityEngine;
 using Zenject;
 
@@ -33,7 +34,10 @@ namespace Magic.Spells
         protected override void OnCollision(Collision2D other)
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            if(other.gameObject.TryGetComponent<BaseCharacter>(out var character))
+            {
+                character.HP -= 1;
+            }
         }
 
         public class Factory : PlaceholderFactory<AutoAttackInfo, AutoAttack>
