@@ -8,5 +8,6 @@ namespace Magic
         public float AutoAttackRange;
         public float AutoAttackCooldown;
         public float AutoAttackSpeed;
+        public float AutoAttackBaseDamage;
     }
 }

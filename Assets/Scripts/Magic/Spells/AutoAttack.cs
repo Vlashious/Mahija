@@ -28,15 +28,15 @@ namespace Magic.Spells
 
         protected override void Act()
         {
-            Rigidbody.MovePosition(transform.position + _dir * (Config.AutoAttackSpeed * Time.fixedDeltaTime));
+            transform.Translate(Vector2.right * Config.AutoAttackSpeed);
         }
 
-        protected override void OnCollision(Collision2D other)
+        protected override void OnCollision(Collider2D other)
         {
             Destroy(gameObject);
-            if(other.gameObject.TryGetComponent<BaseCharacter>(out var character))
+            if (other.gameObject.TryGetComponent<BaseCharacter>(out var character))
             {
-                character.HP -= 1;
+                character.HP -= Config.AutoAttackBaseDamage;
             }
         }
 

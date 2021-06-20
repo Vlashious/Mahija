@@ -6,28 +6,26 @@ using Zenject;
 
 namespace Magic.Spells
 {
-    [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Collider2D))]
     public abstract class BaseSpell : MonoBehaviour
     {
         protected List<IElement> Elements;
-        protected Rigidbody2D Rigidbody;
         [Inject] protected SpellConfig Config;
         [Inject] protected EventController _eventController;
 
         private void Awake()
         {
-            Rigidbody = GetComponent<Rigidbody2D>();
             _eventController.OnFixedUpdate += Act;
         }
 
         protected abstract void Act();
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             OnCollision(other);
         }
 
-        protected abstract void OnCollision(Collision2D other);
+        protected abstract void OnCollision(Collider2D other);
 
         private void OnDestroy()
         {

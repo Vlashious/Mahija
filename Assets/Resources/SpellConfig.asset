@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoAttackRange: 800
   AutoAttackCooldown: 1
-  AutoAttackSpeed: 5
+  AutoAttackSpeed: 50
+  AutoAttackBaseDamage: 1
