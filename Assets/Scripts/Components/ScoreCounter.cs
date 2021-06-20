@@ -1,28 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using Data;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace Components
 {
     public class ScoreCounter : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _scoreText;
-
-        public int Score
+        
+        [Inject]
+        private void Init(PlayerData data)
         {
-            get => _scoreValue;
-            set
-            {
-                _scoreValue = value;
-                UpdateScore();
-            }
+            data.ScoreChanged += UpdateScore;
+            UpdateScore(data.PlayerScore);
         }
-        private int _scoreValue;
 
-        private void UpdateScore()
+        private void UpdateScore(int newScore)
         {
-            _scoreText.text = $"{_scoreValue}";
+            _scoreText.text = $"{newScore}";
         }
     }
 }

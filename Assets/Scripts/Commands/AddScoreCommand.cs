@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Components;
+using Data;
 using UnityEngine;
 using Zenject;
 
@@ -8,12 +9,12 @@ namespace Commands
 {
     public class AddScoreCommand : ICommandWithParameter
     {
-        [Inject] ScoreCounter _scoreCounter;
+        [Inject] PlayerData _data;
 
         public void Execute(CommandParameter parameter)
         {
             var addScoreParameter = (AddScoreParameter)parameter;
-            _scoreCounter.Score += addScoreParameter.ScoreToAdd;
+            _data.PlayerScore += addScoreParameter.ScoreToAdd;
         }
 
         public class AddScoreParameter : CommandParameter

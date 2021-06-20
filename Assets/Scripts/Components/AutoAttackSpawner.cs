@@ -30,12 +30,13 @@ public class AutoAttackSpawner : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Monsters");
         while (true)
         {
-            yield return new WaitForSeconds(_conf.AutoAttackCooldown);
+            yield return null;
             var hitNum =
                 Physics2D.OverlapCircleNonAlloc(_player.transform.position, _conf.AutoAttackRange, others, mask);
             if (hitNum > 0)
             {
                 CreateSpell(others[0].gameObject);
+                yield return new WaitForSeconds(_conf.AutoAttackCooldown);
             }
         }
     }
@@ -46,7 +47,7 @@ public class AutoAttackSpawner : MonoBehaviour
             new AutoAttack.AutoAttackInfo
             {
                 Origin = _player.transform.position,
-                Target = target.transform.position
+                Target = target.transform.position,
             });
     }
 }

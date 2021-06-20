@@ -3,6 +3,7 @@ using Windows;
 using CommonEnums;
 using UnityEngine;
 using Zenject;
+using Data;
 
 namespace Installers
 {
@@ -21,6 +22,7 @@ namespace Installers
             }
 
             Container.Bind<WindowManager>().AsSingle().NonLazy();
+            Container.Bind<PlayerData>().AsSingle().NonLazy();
         }
 
         [Serializable]

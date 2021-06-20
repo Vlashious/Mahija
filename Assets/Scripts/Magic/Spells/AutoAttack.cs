@@ -1,4 +1,5 @@
 using Characters;
+using Magic.Elements;
 using UnityEngine;
 using Zenject;
 
@@ -10,14 +11,17 @@ namespace Magic.Spells
         {
             public Vector3 Origin;
             public Vector3 Target;
+            public IElement[] Elements;
         }
 
         private AutoAttackInfo _info;
         private Vector3 _dir;
+        private IElement[] _spellElements;
 
         [Inject]
         public void Init(AutoAttackInfo info)
         {
+            _spellElements = info.Elements;
             transform.position = info.Origin;
 
             _dir = info.Target - info.Origin;
