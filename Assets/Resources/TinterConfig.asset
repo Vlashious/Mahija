@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fa8ef07bf6ea7469a8962382ef675a, type: 3}
+  m_Name: TinterConfig
+  m_EditorClassIdentifier: 
+  MatterColor: {r: 0.33962262, g: 0.15970686, b: 0, a: 0.78431374}
+  LifeColor: {r: 0.04788497, g: 0.38679248, b: 0, a: 0.78431374}
+  SpiritColor: {r: 0, g: 0.3543515, b: 0.4339623, a: 0.78431374}
+  VoidColor: {r: 0.22351351, g: 0, b: 0.38679248, a: 0.78431374}

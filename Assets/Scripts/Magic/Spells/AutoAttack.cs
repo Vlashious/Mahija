@@ -1,5 +1,6 @@
+using System.Collections.Generic;
 using Characters;
-using Magic.Elements;
+using CommonEnums;
 using UnityEngine;
 using Zenject;
 
@@ -11,23 +12,23 @@ namespace Magic.Spells
         {
             public Vector3 Origin;
             public Vector3 Target;
-            public IElement[] Elements;
+            public ElementType Element;
         }
 
         private AutoAttackInfo _info;
         private Vector3 _dir;
-        private IElement[] _spellElements;
 
         [Inject]
         public void Init(AutoAttackInfo info)
         {
-            _spellElements = info.Elements;
+            _elementType = info.Element;
             transform.position = info.Origin;
 
             _dir = info.Target - info.Origin;
 
             var angle = Vector3.SignedAngle(transform.position, _dir, Vector3.forward);
             transform.right = _dir;
+            Destroy(gameObject, 5f);
         }
 
         protected override void Act()
@@ -37,10 +38,13 @@ namespace Magic.Spells
 
         protected override void OnCollision(Collider2D other)
         {
-            Destroy(gameObject);
-            if (other.gameObject.TryGetComponent<BaseCharacter>(out var character))
+            if (other.gameObject.TryGetComponent<BaseMonster>(out var monster))
             {
-                character.HP -= Config.AutoAttackBaseDamage;
+                if (monster.Element == _elementType)
+                {
+                    Destroy(gameObject);
+                    monster.HP -= Config.AutoAttackBaseDamage;
+                }
             }
         }
 

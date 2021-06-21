@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Magic.Elements;
-using Magic.Spells;
+using CommonEnums;
 
 namespace Data
 {
     public class PlayerData
     {
         public event Action<int> ScoreChanged;
-        public event Action SpellStupChanged;
+        public event Action SpellSetupChanged;
         public int PlayerScore
         {
             get => _playerScore;
@@ -19,17 +18,20 @@ namespace Data
             }
         }
 
-        public Dictionary<BaseSpell, IElement[]> SpellSetup
+        public Dictionary<SpellType, List<ElementType>> SpellSetup
         {
             get => _spellSetup;
             set
             {
                 _spellSetup = value;
-
+                SpellSetupChanged?.Invoke();
             }
         }
 
         private int _playerScore;
-        private Dictionary<BaseSpell, IElement[]> _spellSetup;
+        private Dictionary<SpellType, List<ElementType>> _spellSetup = new Dictionary<SpellType, List<ElementType>>()
+        {
+            {SpellType.AutoAttack, new List<ElementType>() {ElementType.Matter, ElementType.Life, ElementType.Spirit}}
+        };
     }
 }

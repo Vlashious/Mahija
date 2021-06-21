@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -3572157048307307871}
   - component: {fileID: 4077734004609582785}
   - component: {fileID: 1005744926144094159}
+  - component: {fileID: 4214041685944769581}
   m_Layer: 8
   m_Name: BaseSpell
   m_TagString: Untagged
@@ -131,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4214041685944769581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712110103865621526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338b929a00bd46143bef99cf53ea0fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteToTint: {fileID: 4077734004609582785}

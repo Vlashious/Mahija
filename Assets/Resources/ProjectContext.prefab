@@ -151,8 +151,8 @@ MonoBehaviour:
     WindowPrefab: {fileID: 8688894572644663834, guid: fcdc007662939224ab28fe0cbaa96b5d, type: 3}
   - WindowType: 2
     WindowPrefab: {fileID: 2626859284192049186, guid: 49a860c6d39e8c740a16c28480e10c76, type: 3}
-  _dontDestroy: {fileID: 0}
   _windowRoot: {fileID: 122494137163851619}
+  _tintConfig: {fileID: 11400000, guid: 2e5dc7d67ddd7e84497784924f6a29b7, type: 2}
 --- !u!114 &963198730322193844
 MonoBehaviour:
   m_ObjectHideFlags: 0

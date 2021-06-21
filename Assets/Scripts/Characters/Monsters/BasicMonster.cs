@@ -1,3 +1,4 @@
+using CommonEnums;
 using UnityEngine;
 using Zenject;
 
@@ -8,14 +9,16 @@ namespace Characters
         public struct BasicMonsterInfo
         {
             public Vector3 StartPosition;
+            public ElementType Element;
         }
-
         private float _damage;
 
         [Inject]
         protected void Init(BasicMonsterInfo info)
         {
             transform.position = info.StartPosition;
+            Element = info.Element;
+            _tintPainter.Init(Element);
             _maxHp = Config.BasicMonsterMaxHp;
             _hp = _maxHp;
             _speed = Config.BasicMonsterSpeed;

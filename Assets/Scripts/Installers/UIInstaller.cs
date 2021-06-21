@@ -4,6 +4,7 @@ using CommonEnums;
 using UnityEngine;
 using Zenject;
 using Data;
+using ScriptableObjects;
 
 namespace Installers
 {
@@ -11,6 +12,7 @@ namespace Installers
     {
         [SerializeField] private WindowDeclaration[] _windows;
         [SerializeField] private Transform _windowRoot;
+        [SerializeField] private ElementTinterConfig _tintConfig; 
 
         public override void InstallBindings()
         {
@@ -23,6 +25,7 @@ namespace Installers
 
             Container.Bind<WindowManager>().AsSingle().NonLazy();
             Container.Bind<PlayerData>().AsSingle().NonLazy();
+            Container.Bind<ElementTinterConfig>().FromNewScriptableObject(_tintConfig).AsSingle();
         }
 
         [Serializable]

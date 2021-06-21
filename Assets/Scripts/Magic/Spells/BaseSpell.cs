@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using CommonEnums;
+using Components;
 using Controllers;
-using Magic.Elements;
 using UnityEngine;
 using Zenject;
 
@@ -9,13 +10,15 @@ namespace Magic.Spells
     [RequireComponent(typeof(Collider2D))]
     public abstract class BaseSpell : MonoBehaviour
     {
-        protected List<IElement> Elements;
+        protected ElementType _elementType;
+        [SerializeField] private ElementTintPainter _elementTinter;
         [Inject] protected SpellConfig Config;
         [Inject] protected EventController _eventController;
 
         private void Awake()
         {
             _eventController.OnFixedUpdate += Act;
+            _elementTinter.Init(_elementType);
         }
 
         protected abstract void Act();

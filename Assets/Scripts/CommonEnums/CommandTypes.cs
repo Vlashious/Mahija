@@ -6,6 +6,8 @@ namespace CommonEnums
         EnterBattle,
         ExitBattle,
         PauseBattle,
-        AddScore
+        AddScore,
+        AddElementToSpell,
+        RemoveElementFromSpell
     }
 }

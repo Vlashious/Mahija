@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Characters;
+using CommonEnums;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -46,9 +47,12 @@ public class EnemySpawner : MonoBehaviour
             spawnPoint = _camera.ViewportToWorldPoint(spawnPoint);
             spawnPoint = spawnPoint + Vector3.forward * 10;
 
+            var elementType = Random.Range(0, ElementTypeExtension.ElementTypes.Length - 1);
+
             _basicMonsterFactory.Create(new BasicMonster.BasicMonsterInfo
             {
-                StartPosition = spawnPoint
+                StartPosition = spawnPoint,
+                Element = ElementTypeExtension.ElementTypes[elementType]
             });
         }
     }
